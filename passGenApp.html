@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="functions.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div class='container'>
+        <!-- Form that handles the user input -->
+        <form method='POST' class='userInput' action='passGenApp.html' name='container' id="userInput">
+                
+                <!-- Handles the length of the password -->
+                <label for='numberInput'>Number of characters:</label><br>
+                <input type="number" min=0 max=24 name='numberInput'><br>
+                
+                <!-- Checkboxes to see what kind of characters the password should contain -->
+                <form class='checkButtons'>
+                    <input type='checkbox' name='numbers' id='check1'>
+                    <label for="check2"> Use numbers</label><br>
+                </form>
+
+                <form class='checkButtons'>
+                    <input type='checkbox' name='special' id='check2'>
+                    <label for="check3"> Use other acceptable symbols</label><br>
+                </form>
+
+                <!-- Submits the inputs for validation and prints the password in the output form-->
+                <input type="submit" value="Generate" class="btn" onclick="isCompleted()"><br><br>
+        </form>
+
+        <div class='output'>
+            <!-- Where the new password will show on the screen-->
+            <output form='userInput'>
+                <textarea readonly placeholder='Your new password' rows=1 cols=24 id='result'></textarea>
+            </output><br>
+
+            <!-- Button that copies the password in the clipboard -->
+            <button type="button" id='cpyBtn' class="btn" onclick="copyToClipboard()">Copy</button>
+        </div>
+    </div>
+
+</body>
+</html>
